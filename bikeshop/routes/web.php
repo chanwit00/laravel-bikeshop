@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.master');
 });
+
+Route::get('/product',[App\Http\Controllers\ProductController::class, 'index']);
+Route::post('/product/search',[App\Http\Controllers\ProductController::class, 'search']);
+Route::get('/product/search', 'ProductController@search');
+Route::post('/product/search', 'ProductController@search');
