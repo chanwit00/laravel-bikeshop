@@ -22,6 +22,14 @@ Route::get('/', function () {
 Route::get('/product',[App\Http\Controllers\ProductController::class, 'index']);
 Route::post('/product/search',[App\Http\Controllers\ProductController::class, 'search']);
 Route::get('/product/search', 'ProductController@search');
-Route::post('/product/search', 'ProductController@search');
 Route::get('/product/edit/{id?}', [ProductController::class, 'edit']);
 Route::post('/product/update', [ProductController::class, 'update']);
+Route::post('/product/insert', [ProductController::class, 'insert']);
+Route::get('/product/remove/{id?}', [ProductController::class, 'remove']);
+
+Route::get('/category',[App\Http\Controllers\CategoryController::class, 'index']);
+Route::post('/category/search',[App\Http\Controllers\CategoryController::class, 'search']);
+Route::get('/category/edit/{id?}', [CategoryController::class, 'edit']);
+Route::post('/category/update', [CategoryController::class, 'update']);
+Route::post('/category/insert', [CategoryController::class, 'insert']);
+Route::get('/category/remove/{id?}', [CategoryController::class, 'remove']);
