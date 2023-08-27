@@ -9,6 +9,7 @@
             <div class="panel-heading">
                 <div class="panel-title"><strong>รายการ</strong></div>
             </div>
+
             <div class="panel-body">
 
                 <form action="{{ URL::to('category/search') }}" method="post" class="form-inline">
@@ -47,10 +48,9 @@
                         </tr>
                     @endforeach
                 </tbody>
-
-
             </table>
 
+            
             <tfoot>
                 <th class="bs-categoryall">
                     <h4> ยอดรวมทั้งหมด {{ number_format($categorys->count(), 0) }} รายการ </h4>
@@ -62,15 +62,16 @@
                 {{ $categorys->links() }}
             </div>
 
-            <script>
-                $('.btn-delete').on('click', function() {
-                    if (confirm("คุณต้องการลบข้อมูลสินค้าหรือไม่?")) {
-                        var url = "{{ URL::to('category/remove') }}" +
-                            '/' + $(this).attr('id-delete');
-                        window.location.href = url;
-                    }
-                });
-            </script>
+        <script>
+            $('.btn-delete').on('click', function() {
+                if (confirm("คุณต้องการลบข้อมูลสินค้าหรือไม่?")) {
+                    var url = "{{ URL::to('category/remove') }}" +
+                        '/' + $(this).attr('id-delete');
+                    window.location.href = url;
+                }
+            });
+        </script>
 
+    </div>
 
-        @endsection
+@endsection

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class membercontroller extends Controller
+class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,8 @@ class membercontroller extends Controller
             ['name' => 'เอกสิทธิ์', 'age' => 30, 'email' => 'ekkasit@mail.com'],
             ['name' => 'วิรัช', 'age' => 22, 'email' => 'wirat@mail.com'],
             );
-        return response()->json($members);
+            return response()->json($members);
+            
     }
 
     /**

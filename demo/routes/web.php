@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\memberController;
-
+use App\Http\Controllers\MemberController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +14,4 @@ use App\Http\Controllers\memberController;
 |
 */
 
-Route::get('/member',[App\Http\Controllers\memberController::class, 'index']);
+Route::get('member', [App\Http\Controllers\MemberController::class , 'index' ]);
